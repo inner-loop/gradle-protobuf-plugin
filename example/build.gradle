@@ -1,0 +1,15 @@
+apply plugin: 'protobuf'
+apply plugin: 'java'
+
+buildscript {
+    dependencies {
+        classpath files('../build/libs/gradle-protobuf-plugin-0.1.jar')
+    }
+}
+
+protobuf {
+    protocExecutable = 'protoc'
+    srcDir = 'src/main/proto'
+    generatedSrcDir = 'build/generated-sources'
+    languages = ['java','cpp']
+}
